@@ -1,18 +1,213 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#5BBEE7ED"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_60sdp"
+        android:background="@drawable/card_background"
+        android:elevation="10dp"
+        android:orientation="vertical"
+        android:weightSum="4">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="2">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edtPond"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:padding="@dimen/_10sdp"
+                app:boxCornerRadiusBottomEnd="@dimen/_13sdp"
+                app:boxCornerRadiusBottomStart="@dimen/_13sdp"
+                app:boxCornerRadiusTopEnd="@dimen/_13sdp"
+                app:boxCornerRadiusTopStart="@dimen/_13sdp"
+                app:endIconMode="clear_text">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Pond / Tank Size"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edtDensity"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp"
+                app:boxCornerRadiusBottomEnd="@dimen/_13sdp"
+                app:boxCornerRadiusBottomStart="13dp"
+                app:boxCornerRadiusTopEnd="@dimen/_13sdp"
+                app:boxCornerRadiusTopStart="@dimen/_13sdp"
+                app:endIconMode="clear_text">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/edtPond"
+                    android:layout_centerHorizontal="true"
+                    android:hint="Stocking Density (m2)"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edtShrimp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp"
+                app:boxCornerRadiusBottomEnd="@dimen/_13sdp"
+                app:boxCornerRadiusBottomStart="@dimen/_13sdp"
+                app:boxCornerRadiusTopEnd="@dimen/_13sdp"
+                app:boxCornerRadiusTopStart="@dimen/_13sdp"
+                app:endIconMode="clear_text">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/edtDensity"
+                    android:layout_centerHorizontal="true"
+                    android:hint="Number of Shrimp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edtBodyWt"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp"
+                app:boxCornerRadiusBottomEnd="@dimen/_13sdp"
+                app:boxCornerRadiusBottomStart="@dimen/_13sdp"
+                app:boxCornerRadiusTopEnd="@dimen/_13sdp"
+                app:boxCornerRadiusTopStart="@dimen/_13sdp"
+                app:endIconMode="clear_text">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/edtShrimp"
+                    android:layout_centerHorizontal="true"
+                    android:hint="Average Body Weight"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edtOxy"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp"
+                app:boxCornerRadiusBottomEnd="@dimen/_13sdp"
+                app:boxCornerRadiusBottomStart="@dimen/_13sdp"
+                app:boxCornerRadiusTopEnd="@dimen/_13sdp"
+                app:boxCornerRadiusTopStart="@dimen/_13sdp"
+                app:endIconMode="clear_text">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="@dimen/_75sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/edtBodyWt"
+                    android:layout_centerHorizontal="true"
+                    android:hint="Oxygen"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edtTemp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp"
+                app:boxCornerRadiusBottomEnd="@dimen/_13sdp"
+                app:boxCornerRadiusBottomStart="@dimen/_13sdp"
+                app:boxCornerRadiusTopEnd="@dimen/_13sdp"
+                app:boxCornerRadiusTopStart="@dimen/_13sdp"
+                app:endIconMode="clear_text">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="@dimen/_75sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/edtOxy"
+                    android:layout_centerHorizontal="true"
+                    android:hint="Temperature"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edtPh"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp"
+                app:boxCornerRadiusBottomEnd="@dimen/_13sdp"
+                app:boxCornerRadiusBottomStart="@dimen/_13sdp"
+                app:boxCornerRadiusTopEnd="@dimen/_13sdp"
+                app:boxCornerRadiusTopStart="@dimen/_13sdp"
+                app:endIconMode="clear_text">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="@dimen/_75sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/edtTemp"
+                    android:layout_centerHorizontal="true"
+                    android:hint="Ph"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:boxCornerRadiusBottomEnd="@dimen/_13sdp"
+                    app:boxCornerRadiusBottomStart="@dimen/_13sdp"
+                    app:boxCornerRadiusTopEnd="@dimen/_13sdp"
+                    app:boxCornerRadiusTopStart="@dimen/_13sdp" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSubmit"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Submit" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
